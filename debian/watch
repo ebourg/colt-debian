@@ -1,0 +1,4 @@
+version=3
+opts="dversionmangle=s/\+dfsg//g" \
+http://acs.lbl.gov/software/colt/colt-download/releases/colt-([\d\.]+)\.tar\.gz \
+    debian debian/get-orig-source

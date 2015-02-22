@@ -1,0 +1,44 @@
+colt (1.2.0+dfsg-2) unstable; urgency=low
+
+  * Upload to unstable
+    Closes: #720553
+  * cme fix dpkg-control
+  * anonscm in Vcs fields
+
+ -- Andreas Tille <tille@debian.org>  Fri, 23 Aug 2013 13:58:03 +0200
+
+colt (1.2.0+dfsg-1) experimental; urgency=low
+
+  * debian/copyright:
+     - DEP5
+     - Add Files-Excluded to document what was removed from original source
+  * debian/{control,rules}: use default java implementation
+    thanks for the patch to James Page <james.page@ubuntu.com>
+    Closes: #683528
+  * debian/control: Standards-Version: 3.9.4
+
+ -- Andreas Tille <tille@debian.org>  Mon, 17 Dec 2012 15:52:07 +0100
+
+colt (1.2.0~nojar-2) unstable; urgency=low
+
+  * debian/control:
+     - Pure Java is arch: all
+     - Standards-Version: 3.9.3 (no changes needed)
+  * debhelper 9 (control+compat)
+
+ -- Andreas Tille <tille@debian.org>  Tue, 19 Jun 2012 09:46:59 +0200
+
+colt (1.2.0~nojar-1) unstable; urgency=low
+
+  * Initial release (Closes: #656741)
+  * Remark: The package version "~nojar" was chosen in contrast to the
+    previous "~dfsg" to reflect that binary JAR files which are unneeded
+    are stripped from the upstream tarball to avoid more trouble with
+    licensing issues.  So the only issue with the explicte exclusion of
+    military applications remains and is the reason for upload to non-free.
+    However at least the final target beast-mcmc could go to contrib.
+    Remark2: I'm not sure what "military applications" actually means
+    without a proper definition and whether this license is applicable at
+    all.
+
+ -- Andreas Tille <tille@debian.org>  Tue, 24 Jan 2012 12:16:20 +0100

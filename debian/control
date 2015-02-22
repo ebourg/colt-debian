@@ -1,0 +1,59 @@
+Source: colt
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Uploaders: Andreas Tille <tille@debian.org>
+Section: non-free/java
+Priority: optional
+Build-Depends: debhelper (>= 9),
+               javahelper (>=0.25),
+               default-jdk,
+               ant,
+               libconcurrent-java
+Standards-Version: 3.9.4
+Vcs-Browser: http://anonscm.debian.org/viewvc/debian-med/trunk/packages/libcolt-java/trunk/
+Vcs-Svn: svn://anonscm.debian.org/debian-med/trunk/packages/libcolt-java/trunk/
+Homepage: http://acs.lbl.gov/software/colt/
+
+Package: libcolt-java
+Architecture: all
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ${java:Depends}
+Recommends: ${java:Recommends}
+Description: scalable scientific and technical computing in Java
+ This distribution provides an infrastructure for scalable scientific
+ and technical computing in Java. It is particularly useful in the domain
+ of High Energy Physics at CERN: It contains, among others, efficient and
+ usable data structures and algorithms for Off-line and On-line Data
+ Analysis, Linear Algebra, Multi-dimensional arrays, Statistics,
+ Histogramming, Monte Carlo Simulation, Parallel & Concurrent
+ Programming. It summons some of the best concepts, designs and
+ implementations thought up over time by the community, ports or improves
+ them and introduces new approaches where need arises. In overlapping
+ areas, it is competitive or superior to toolkits such as STL, Root,
+ HTL, CLHEP, TNT, GSL, C-RAND / WIN-RAND, (all C/C++) as well as  IBM
+ Array,  JDK 1.2 Collections framework (all Java), in terms of
+ performance, functionality and (re)usability. 
+
+Package: libcolt-java-doc
+Architecture: all
+Section: non-free/doc
+Depends: ${java:Depends},
+         ${misc:Depends}
+Recommends: ${java:Recommends}
+Description: scalable scientific and technical computing in Java (doc)
+ This distribution provides an infrastructure for scalable scientific
+ and technical computing in Java. It is particularly useful in the domain
+ of High Energy Physics at CERN: It contains, among others, efficient and
+ usable data structures and algorithms for Off-line and On-line Data
+ Analysis, Linear Algebra, Multi-dimensional arrays, Statistics,
+ Histogramming, Monte Carlo Simulation, Parallel & Concurrent
+ Programming. It summons some of the best concepts, designs and
+ implementations thought up over time by the community, ports or improves
+ them and introduces new approaches where need arises. In overlapping
+ areas, it is competitive or superior to toolkits such as STL, Root,
+ HTL, CLHEP, TNT, GSL, C-RAND / WIN-RAND, (all C/C++) as well as  IBM
+ Array,  JDK 1.2 Collections framework (all Java), in terms of
+ performance, functionality and (re)usability. 
+ .
+ This package provides the documentation for the library
+

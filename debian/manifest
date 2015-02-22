@@ -1,0 +1,2 @@
+/usr/share/java/colt.jar:
+ Class-Path: /usr/share/java/concurrent.jar

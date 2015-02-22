@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+JAVA_HOME=/usr/lib/jvm/default-java
+
+%:
+	dh $@ --with javahelper
+
+override_dh_auto_build:
+	ant -Dant.build.javac.source=1.5 -Dant.build.javac.target=1.5 build
+
+override_dh_installdocs:
+	dh_installdocs
+	rm -rf debian/libcolt-java-doc/usr/share/doc/libcolt-java/licenses
+
+override_dh_clean:
+	dh_clean
+	rm -rf build
+	rm -rf lib/*.jar
+
+get-orig-source:
+	mkdir -p ../tarballs
+#	uscan --verbose --force-download --destdir ../tarballs
+# Remark: The following uscan command requires devscripts > 2.12.4 which is not
+#         yet released at the time of this package release.  The code can be obtained
+#         via
+#   git clone git://tille@git.debian.org/git/users/tille/devscripts.git
+#         and then use scripts/uscan.pl
+	uscan --verbose --force-download --repack-compression xz --destdir ../tarballs

@@ -1,0 +1,33 @@
+#!/bin/sh
+# get source for libcolt-java and remove unneeded jars
+
+set -e
+NAME=`dpkg-parsechangelog | awk '/^Source/ { print $2 }'`
+
+if ! echo $@ | grep -q upstream-version ; then
+    VERSION=`dpkg-parsechangelog | awk '/^Version:/ { print $2 }' | sed 's/\([0-9\.]\+\)-[0-9]\+$/\1/'`
+else
+    VERSION=`echo $@ | sed "s?^.*--upstream-version \([0-9.]\+\) .*${NAME}.*?\1?"`
+    if echo "$VERSION" | grep -q "upstream-version" ; then
+        echo "Unable to parse version number"
+        exit
+    fi
+fi
+
+UPSTREAMTAR=${NAME}-${VERSION}.tar.gz
+
+mkdir -p ../tarballs
+cd ../tarballs
+mv ../${UPSTREAMTAR} .
+tar -xzf ${UPSTREAMTAR}
+cd ${NAME}
+
+# Remove concurrent which is just packaged for Debian
+find . -name "*concurrent*" -delete
+
+# Remove unneeded JARs
+find . -name "*.jar" -delete
+
+cd ..
+GZIP="--best --no-name" tar --owner=root --group=root --mode=a+rX -czf "$NAME"_"$VERSION"~nojar.orig.tar.gz "${NAME}"
+rm -rf "${NAME}"
