@@ -214,7 +214,7 @@ protected static String blanks(int length) {
  */
 public void checkRectangular(DoubleMatrix2D A) {
 	if (A.rows() < A.columns()) {
-		throw new IllegalArgumentException("Matrix must be rectangular: "+cern.colt.matrix.doublealgo.Formatter.shape(A));
+		throw new IllegalArgumentException("Matrix must be rectangular: "+this/*cern.colt.matrix.doublealgo.Formatter.shape(A)*/);
 	}
 }
 /**
@@ -222,7 +222,7 @@ public void checkRectangular(DoubleMatrix2D A) {
  * @throws IllegalArgumentException if <tt>A.rows() != A.columns()</tt>.
  */
 public void checkSquare(DoubleMatrix2D A) {
-	if (A.rows() != A.columns()) throw new IllegalArgumentException("Matrix must be square: "+cern.colt.matrix.doublealgo.Formatter.shape(A));
+	if (A.rows() != A.columns()) throw new IllegalArgumentException("Matrix must be square: "+this/*cern.colt.matrix.doublealgo.Formatter.shape(A)*/);
 }
 /**
  * Returns the matrix's fraction of non-zero cells; <tt>A.cardinality() / A.size()</tt>.

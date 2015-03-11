@@ -543,9 +543,11 @@ public void toArray(double[] values) {
  * Returns a string representation using default formatting.
  * @see cern.colt.matrix.doublealgo.Formatter
  */
+/*
 public String toString() {
 	return new cern.colt.matrix.doublealgo.Formatter().toString(this);
 }
+*/
 /**
  * Constructs and returns a new view equal to the receiver.
  * The view is a shallow clone. Calls <code>clone()</code> and casts the result.
@@ -673,9 +675,11 @@ For further information, see {@link cern.colt.matrix.doublealgo.Sorting#sort(Dou
 For more advanced sorting functionality, see {@link cern.colt.matrix.doublealgo.Sorting}.
 @return a new sorted vector (matrix) view.
 */
+/*
 public DoubleMatrix1D viewSorted() {
 	return cern.colt.matrix.doublealgo.Sorting.mergeSort.sort(this);
 }
+*/
 /**
 Constructs and returns a new <i>stride view</i> which is a sub matrix consisting of every i-th cell.
 More specifically, the view has size <tt>this.size()/stride</tt> holding cells <tt>this.get(i*stride)</tt> for all <tt>i = 0..size()/stride - 1</tt>.
