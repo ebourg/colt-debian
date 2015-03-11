@@ -62,6 +62,9 @@ See the target "usage" further below for instructions on how to build the softwa
 		<include name="*.jar"/>
 		<exclude name="${jar.filename}"/>
 	</fileset>
+	<fileset dir="/usr/share/java">
+		<include name="concurrent.jar"/>
+        </fileset>
 	<!-- <pathelement location="${build.home}/classes"/> -->
 </path>
 
